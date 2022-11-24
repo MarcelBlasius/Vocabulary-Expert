@@ -1,0 +1,11 @@
+.vocabulary-card {
+  text-align: center;
+  font-size: larger;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  --color: --ion-color-primary-contrast;
+}
+
+.vocabulary-card:hover {
+  --background: --ion-color-primary-shade;
+}

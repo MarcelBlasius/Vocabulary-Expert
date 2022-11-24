@@ -12,6 +12,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { BoxesOverviewComponent } from './boxes-overview/boxes-overview.component';
+import { BoxComponent } from './box/box.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { BoxesOverviewComponent } from './boxes-overview/boxes-overview.componen
     HomeComponent,
     StatisticsComponent,
     BoxesOverviewComponent,
+    BoxComponent,
   ],
   imports: [
     FormsModule,
