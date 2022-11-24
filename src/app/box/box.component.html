@@ -2,7 +2,11 @@
   <div class="header">
     <h2>{{ this.box.name }}</h2>
     <div class="button-container">
-      <ion-button class="button" fill="outline">
+      <ion-button
+        class="button"
+        fill="outline"
+        href="vocabularies/{{ this.box.id }}/add"
+      >
         <ion-icon name="add"></ion-icon>
       </ion-button>
     </div>

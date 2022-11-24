@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AddVocabularyComponent } from './add-vocabulary/add-vocabulary.component';
 import { BoxComponent } from './box/box.component';
 import { BoxesOverviewComponent } from './boxes-overview/boxes-overview.component';
 import { HomeComponent } from './home/home.component';
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'vocabularies/:id',
     component: BoxComponent,
+  },
+  {
+    path: 'vocabularies/:id/add',
+    component: AddVocabularyComponent,
   },
   {
     path: 'statistics',
