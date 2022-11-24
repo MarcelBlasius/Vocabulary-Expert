@@ -1,0 +1,19 @@
+.boxes-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.box-icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 64px;
+}
+
+.scroll-view {
+  height: 80vh;
+  overflow: auto;
+  margin-bottom: 20px;
+}

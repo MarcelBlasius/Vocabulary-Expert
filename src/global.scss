@@ -26,9 +26,34 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 .header {
+  display: grid;
+  grid-template-columns: 60% 40%;
   margin-left: 5vw;
+  margin-right: 5vw;
 }
 
 .header h2 {
+  margin-top: 2vh;
   font-weight: bold;
+}
+
+.header .button-container {
+  justify-self: right;
+}
+
+.header ion-button {
+  padding-left: 1px;
+  margin-top: 1.5vh;
+  width: 40px;
+  height: 40px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  --color: black;
+  --border-color: black;
+}
+
+.header ion-button ion-icon {
+  scale: 3;
 }

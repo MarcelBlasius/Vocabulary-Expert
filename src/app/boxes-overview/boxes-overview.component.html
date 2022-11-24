@@ -1,5 +1,24 @@
 <div>
   <div class="header">
     <h2>Vocabularies</h2>
+    <div class="button-container">
+      <ion-button class="button" fill="outline">
+        <ion-icon name="add"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+  <div class="content">
+    <div class="boxes-container scroll-view">
+      <div class="box" *ngFor="let box of boxes">
+        <ion-card>
+          <ion-item>
+            <ion-card-header>
+              <ion-icon class="box-icon" name="albums-outline"></ion-icon>
+              <ion-card-title> {{ box.name }}</ion-card-title>
+            </ion-card-header>
+          </ion-item>
+        </ion-card>
+      </div>
+    </div>
   </div>
 </div>

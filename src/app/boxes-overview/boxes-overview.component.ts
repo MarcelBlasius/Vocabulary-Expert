@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BOXES } from '../mocks/BOXES';
+import { Box } from '../models/Box';
 
 @Component({
   selector: 'app-boxes-overview',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./boxes-overview.component.scss'],
 })
 export class BoxesOverviewComponent implements OnInit {
+  boxes: Box[];
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.boxes = BOXES;
+  }
 }
