@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { BoxesOverviewComponent } from './boxes-overview/boxes-overview.component';
 import { HomeComponent } from './home/home.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 const routes: Routes = [
   {
@@ -11,6 +13,14 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'vocabularies',
+    component: BoxesOverviewComponent,
+  },
+  {
+    path: 'statistics',
+    component: StatisticsComponent,
   },
 ];
 
