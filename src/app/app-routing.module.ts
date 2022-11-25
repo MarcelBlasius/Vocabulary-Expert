@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AddVocabularyComponent } from './add-vocabulary/add-vocabulary.component';
 import { BoxComponent } from './box/box.component';
 import { BoxesOverviewComponent } from './boxes-overview/boxes-overview.component';
+import { EditVocabularyComponent } from './edit-vocabulary/edit-vocabulary.component';
 import { HomeComponent } from './home/home.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'vocabularies/:id/add',
     component: AddVocabularyComponent,
+  },
+  {
+    path: 'vocabularies/:id/:vocabularyId',
+    component: EditVocabularyComponent,
   },
   {
     path: 'statistics',

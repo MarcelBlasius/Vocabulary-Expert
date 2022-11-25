@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BOXES } from '../mocks/BOXES';
 import { Box } from '../models/Box';
+import { Vocabulary } from '../models/Vocabulary';
 
 @Component({
   selector: 'app-box',
@@ -10,11 +11,20 @@ import { Box } from '../models/Box';
 })
 export class BoxComponent implements OnInit {
   box: Box | undefined;
+  timeoutHandler: any;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.box = BOXES.find((x) => x.id === id);
+  }
+
+  vocabularyClicked(vocabulary: Vocabulary) {
+    vocabulary.flipped = !vocabulary.flipped;
+  }
+
+  vocabularyHold(vocabularyId: string) {
+    this.router.navigate([`/vocabularies/${this.box?.id}/${vocabularyId}`]);
   }
 }

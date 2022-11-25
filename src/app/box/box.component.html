@@ -16,7 +16,8 @@
       <div
         class="card"
         *ngFor="let vocabulary of box.vocabularies"
-        (click)="vocabulary.flipped = !vocabulary.flipped"
+        (click)="vocabularyClicked(vocabulary)"
+        (press)="vocabularyHold(vocabulary.id)"
       >
         <div *ngIf="!vocabulary.flipped">
           <ion-card class="vocabulary-card">

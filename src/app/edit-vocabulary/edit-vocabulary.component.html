@@ -1,0 +1,29 @@
+<div *ngIf="this.vocabulary">
+  <div class="header">
+    <h2>Edit vocabulary</h2>
+  </div>
+  <div class="content">
+    <div class="card-container">
+      <div class="input-card">
+        <ion-input
+          class="text-input"
+          [(ngModel)]="this.editedFrontside"
+        ></ion-input>
+      </div>
+      <div class="input-card">
+        <ion-input
+          class="text-input"
+          [(ngModel)]="this.editedBackside"
+        ></ion-input>
+      </div>
+      <div class="button-container">
+        <ion-fab-button class="button" (click)="deleteVocabulary()">
+          <ion-icon name="trash-outline"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button class="button" (click)="saveChanges()">
+          <ion-icon name="checkmark-outline"></ion-icon>
+        </ion-fab-button>
+      </div>
+    </div>
+  </div>
+</div>
