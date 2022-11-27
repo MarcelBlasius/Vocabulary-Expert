@@ -11,11 +11,12 @@ export class StorageService {
     this.storage.create();
   }
 
-  save(key: string, value: string): Promise<any> {
+  save(key: string, value: any): Promise<any> {
     return this.storage.set(key, value);
   }
 
   get(key: string): Promise<any> {
+    console.log(key);
     return this.storage.get(key);
   }
 
