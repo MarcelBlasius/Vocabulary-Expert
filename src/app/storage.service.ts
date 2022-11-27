@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
-
+import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
 // https://github.com/ionic-team/ionic-storage
 
 @Injectable({
@@ -8,7 +8,9 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class StorageService {
   constructor(private storage: Storage) {
-    this.storage.create();
+    this.storage
+      .defineDriver(CordovaSQLiteDriver)
+      .then((_) => this.storage.create());
   }
 
   save(key: string, value: any): Promise<any> {

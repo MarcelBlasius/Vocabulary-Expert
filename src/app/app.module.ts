@@ -16,6 +16,8 @@ import { BoxComponent } from './box/box.component';
 import { AddVocabularyComponent } from './add-vocabulary/add-vocabulary.component';
 import { EditVocabularyComponent } from './edit-vocabulary/edit-vocabulary.component';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
+import { Drivers } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { IonicStorageModule } from '@ionic/storage-angular';
     AppRoutingModule,
     CommonModule,
     HammerModule,
-    IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot({
+      driverOrder: [CordovaSQLiteDriver._driver, Drivers.IndexedDB],
+    }),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
