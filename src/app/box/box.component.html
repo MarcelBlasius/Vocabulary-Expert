@@ -12,22 +12,26 @@
     </div>
   </div>
   <div class="content">
-    <div class="card-container scroll-view">
-      <div
-        class="card"
-        *ngFor="let vocabulary of box.vocabularies"
-        (click)="vocabularyClicked(vocabulary)"
-        (press)="vocabularyHold(vocabulary.id)"
-      >
-        <div *ngIf="!vocabulary.flipped">
-          <ion-card class="vocabulary-card">
-            {{ vocabulary.frontSide }}</ion-card
-          >
-        </div>
-        <div *ngIf="vocabulary.flipped">
-          <ion-card class="vocabulary-card">
-            {{ vocabulary.backSide }}</ion-card
-          >
+    <!--https://github.com/ionic-team/ionic-framework/issues/18335#issuecomment-495075373-->
+    <div class="scroll-view">
+      <div class="card-container">
+        <div
+          class="card"
+          *ngFor="let vocabulary of box.vocabularies"
+          (click)="vocabularyClicked(vocabulary)"
+          (press)="vocabularyHold(vocabulary.id)"
+          [style.touch-action]="'pan-y'"
+        >
+          <div *ngIf="!vocabulary.flipped">
+            <ion-card class="vocabulary-card">
+              {{ vocabulary.frontSide }}</ion-card
+            >
+          </div>
+          <div *ngIf="vocabulary.flipped">
+            <ion-card class="vocabulary-card">
+              {{ vocabulary.backSide }}</ion-card
+            >
+          </div>
         </div>
       </div>
     </div>

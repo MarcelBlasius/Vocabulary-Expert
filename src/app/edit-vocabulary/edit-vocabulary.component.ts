@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { BoxService } from '../box.service';
 import { BOXES } from '../mocks/BOXES';
 import { Box } from '../models/Box';
 import { Vocabulary } from '../models/Vocabulary';
@@ -14,12 +15,16 @@ export class EditVocabularyComponent implements OnInit {
   vocabulary: Vocabulary;
   editedFrontside: string;
   editedBackside: string;
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private boxService: BoxService
+  ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     const vocabularyId = this.route.snapshot.paramMap.get('vocabularyId');
-    this.box = BOXES.find((x) => x.id === id) ?? new Box();
+    this.box = (await this.boxService.get(id!)) ?? new Box();
     this.vocabulary =
       this.box.vocabularies.find((x) => x.id === vocabularyId) ??
       new Vocabulary();
@@ -28,17 +33,19 @@ export class EditVocabularyComponent implements OnInit {
     this.editedBackside = this.vocabulary.backSide;
   }
 
-  deleteVocabulary() {
-    this.box.vocabularies = this.box?.vocabularies.filter(
-      (x) => x.id !== this.vocabulary.id
-    );
+  async deleteVocabulary() {
+    await this.boxService.deleteVocabulary(this.box.id, this.vocabulary.id);
     this.router.navigate([`/vocabularies/${this.box?.id}`]);
   }
 
-  saveChanges() {
+  async saveChanges() {
     this.vocabulary.frontSide = this.editedFrontside;
     this.vocabulary.backSide = this.editedBackside;
     this.vocabulary.flipped = false;
+    await this.boxService.insertOrUpdateVocabulary(
+      this.box.id,
+      this.vocabulary
+    );
     this.router.navigate([`/vocabularies/${this.box?.id}`]);
   }
 }
