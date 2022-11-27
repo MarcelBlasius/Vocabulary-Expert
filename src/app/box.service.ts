@@ -6,7 +6,7 @@ import { Guid } from 'guid-typescript';
 @Injectable({
   providedIn: 'root',
 })
-export class BoxServiceService {
+export class BoxService {
   private readonly STORAGE_KEY: 'Boxes';
   constructor(private storageService: StorageService) {}
 

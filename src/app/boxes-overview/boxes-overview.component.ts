@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BoxService } from '../box.service';
 import { BOXES } from '../mocks/BOXES';
 import { Box } from '../models/Box';
 
@@ -10,9 +12,9 @@ import { Box } from '../models/Box';
 export class BoxesOverviewComponent implements OnInit {
   boxes: Box[];
 
-  constructor() {}
+  constructor(private boxService: BoxService, private router: Router) {}
 
-  ngOnInit() {
-    this.boxes = BOXES;
+  async ngOnInit() {
+    this.boxes = await this.boxService.getAll();
   }
 }
