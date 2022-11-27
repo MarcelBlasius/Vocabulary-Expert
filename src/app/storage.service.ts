@@ -7,22 +7,38 @@ import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
   providedIn: 'root',
 })
 export class StorageService {
+  private initialized = false;
+
   constructor(private storage: Storage) {
-    this.storage
-      .defineDriver(CordovaSQLiteDriver)
-      .then((_) => this.storage.create());
+    this.init();
   }
 
-  save(key: string, value: any): Promise<any> {
+  async init() {
+    this.storage.create();
+    await this.storage
+      .defineDriver(CordovaSQLiteDriver)
+      .then((_) => this.storage.create())
+      .then((_) => (this.initialized = true));
+  }
+
+  async save(key: string, value: any): Promise<any> {
+    if (!this.initialized) {
+      await this.init();
+    }
     return this.storage.set(key, value);
   }
 
-  get(key: string): Promise<any> {
-    console.log(key);
+  async get(key: string): Promise<any> {
+    if (!this.initialized) {
+      await this.init();
+    }
     return this.storage.get(key);
   }
 
-  delete(key: string): Promise<any> {
+  async delete(key: string): Promise<any> {
+    if (!this.initialized) {
+      await this.init();
+    }
     return this.storage.remove(key);
   }
 }
