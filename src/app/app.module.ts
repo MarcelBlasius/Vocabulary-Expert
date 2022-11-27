@@ -1,9 +1,5 @@
 import { NgModule } from '@angular/core';
-import {
-  BrowserModule,
-  HammerModule,
-  HAMMER_GESTURE_CONFIG,
-} from '@angular/platform-browser';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -19,6 +15,7 @@ import { BoxesOverviewComponent } from './boxes-overview/boxes-overview.componen
 import { BoxComponent } from './box/box.component';
 import { AddVocabularyComponent } from './add-vocabulary/add-vocabulary.component';
 import { EditVocabularyComponent } from './edit-vocabulary/edit-vocabulary.component';
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 @NgModule({
   declarations: [
@@ -38,6 +35,7 @@ import { EditVocabularyComponent } from './edit-vocabulary/edit-vocabulary.compo
     AppRoutingModule,
     CommonModule,
     HammerModule,
+    IonicStorageModule.forRoot(),
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
