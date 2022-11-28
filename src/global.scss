@@ -63,3 +63,15 @@
   overflow: auto;
   margin-bottom: 20px;
 }
+
+.content-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scale: 1.5;
+}
+
+.content-button-container ion-fab-button {
+  margin-left: 5vw;
+  margin-right: 5vw;
+}

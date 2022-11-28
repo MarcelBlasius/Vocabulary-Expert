@@ -1,3 +1,8 @@
+.content {
+  display: grid;
+  grid-template-rows: 60vh 20vh;
+}
+
 .vocabulary-card {
   text-align: center;
   font-size: larger;
@@ -8,4 +13,8 @@
 
 .vocabulary-card:hover {
   --background: --ion-color-primary-shade;
+}
+
+.scroll-view {
+  height: 60vh;
 }

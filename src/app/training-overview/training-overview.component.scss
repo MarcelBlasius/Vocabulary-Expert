@@ -1,0 +1,53 @@
+.content {
+  display: grid;
+  grid-template-rows: 40vh 20vh 20vh;
+}
+
+.checkboxes {
+  justify-self: center;
+  width: 50vw;
+}
+
+.checkbox {
+  --background: transparent;
+}
+
+.red-checkbox ion-checkbox::part(container) {
+  --background-checked: var(--ion-color-danger);
+  border-radius: 6px;
+  border: 2px solid var(--ion-color-danger);
+}
+
+.yellow-checkbox ion-checkbox::part(container) {
+  --background-checked: var(--ion-color-warning);
+  border-radius: 6px;
+  border: 2px solid var(--ion-color-warning);
+}
+
+.green-checkbox ion-checkbox::part(container) {
+  --background-checked: var(--ion-color-success);
+  border-radius: 6px;
+  border: 2px solid var(--ion-color-success);
+}
+
+.red {
+  color: var(--ion-color-danger);
+}
+
+.green {
+  color: var(--ion-color-success);
+}
+
+.yellow {
+  color: var(--ion-color-warning);
+}
+
+.voc-count {
+  color: white;
+}
+
+.chart-container {
+  margin-top: 5vh;
+  justify-self: center;
+  width: 60%;
+}

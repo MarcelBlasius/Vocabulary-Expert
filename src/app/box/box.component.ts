@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BoxService } from '../box.service';
-import { BOXES } from '../mocks/BOXES';
 import { Box } from '../models/Box';
 import { Vocabulary } from '../models/Vocabulary';
 
@@ -12,7 +11,6 @@ import { Vocabulary } from '../models/Vocabulary';
 })
 export class BoxComponent implements OnInit {
   box: Box | undefined;
-  timeoutHandler: any;
 
   constructor(
     private route: ActivatedRoute,

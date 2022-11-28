@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BoxService } from '../box.service';
-import { BOXES } from '../mocks/BOXES';
 import { Box } from '../models/Box';
 
 @Component({

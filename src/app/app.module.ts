@@ -19,6 +19,7 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver';
 import { Drivers } from '@ionic/storage';
 import { AddBoxComponent } from './add-box/add-box.component';
+import { TrainingOverviewComponent } from './training-overview/training-overview.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AddBoxComponent } from './add-box/add-box.component';
     AddVocabularyComponent,
     EditVocabularyComponent,
     AddBoxComponent,
+    TrainingOverviewComponent,
   ],
   imports: [
     FormsModule,

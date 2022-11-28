@@ -7,6 +7,7 @@ import { BoxesOverviewComponent } from './boxes-overview/boxes-overview.componen
 import { EditVocabularyComponent } from './edit-vocabulary/edit-vocabulary.component';
 import { HomeComponent } from './home/home.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { TrainingOverviewComponent } from './training-overview/training-overview.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'vocabularies/:id/:vocabularyId',
     component: EditVocabularyComponent,
+  },
+  {
+    path: ':id/training/overview',
+    component: TrainingOverviewComponent,
   },
   {
     path: 'statistics',
