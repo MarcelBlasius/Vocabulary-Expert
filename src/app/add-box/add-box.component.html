@@ -1,4 +1,19 @@
 <div>
-  <input type="text" [(ngModel)]="this.name" placeholder="name of box" /><br />
-  <ion-button (click)="save()">save</ion-button>
+  <div class="header">
+    <h2>Add Box</h2>
+  </div>
+  <div class="content">
+    <div class="card-container">
+      <div class="input-card">
+        <ion-input
+          class="text-input"
+          placeholder="German"
+          [(ngModel)]="this.name"
+        ></ion-input>
+      </div>
+      <ion-fab-button class="button" (click)="save()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </div>
+  </div>
 </div>

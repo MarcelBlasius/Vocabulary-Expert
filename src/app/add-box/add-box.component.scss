@@ -1,0 +1,23 @@
+.card-container {
+  display: grid;
+  grid-template-rows: 60vh 20vh;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.input-card {
+  height: 60vh;
+  border: 2px solid --ion-color-primary-contrast;
+  text-align: center;
+}
+
+.text-input {
+  height: 100%;
+  font-size: larger;
+}
+
+.button {
+  align-self: center;
+  justify-self: center;
+  scale: 1.5;
+}
